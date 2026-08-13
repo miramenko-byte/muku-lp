@@ -41,7 +41,7 @@
   "url": "https://muku-lp.vercel.app/",
   "telephone": "+81-80-5383-5756",
   "email": "miramenko@gmail.com",
-  "priceRange": "¥8,800",
+  "priceRange": "¥6,600〜¥8,800",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "京都市北区紫野北舟岡町",
@@ -227,7 +227,7 @@
     gap:18px;
     align-items:center;
   }
-  .hero-meta span:nth-child(2){ opacity:0.5; }
+  .hero-meta span.sep{ opacity:0.5; }
 
   .scroll-cue{
     position:absolute;
@@ -447,21 +447,53 @@
     font-weight:400;
   }
   .menu-price{
-    margin:34px 0;
+    margin:34px 0 8px;
     display:flex;
     align-items:baseline;
     justify-content:center;
     gap:10px;
   }
   .menu-price .num{
-    font-size:42px;
+    font-size:32px;
+    font-weight:700;
+    color:var(--muted);
+    font-family:'Shippori Mincho', serif;
+  }
+  .menu-price .num.strike{
+    text-decoration:line-through;
+    text-decoration-color:var(--muted);
+    opacity:0.6;
+  }
+  .menu-price .unit{
+    font-size:12px;
+    color:var(--muted);
+  }
+  .menu-price-special{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .menu-price-special .num{
+    font-size:44px;
     font-weight:700;
     color:var(--brass-light);
     font-family:'Shippori Mincho', serif;
   }
-  .menu-price .unit{
+  .menu-price-special .unit{
     font-size:13px;
     color:var(--muted);
+  }
+  .menu-special-note{
+    text-align:center;
+    font-size:11.5px;
+    color:var(--brass);
+    letter-spacing:0.03em;
+    line-height:1.9;
+    margin-bottom:30px;
+    padding-bottom:26px;
+    border-bottom:1px dashed var(--line-dark);
   }
   .menu-time{
     font-size:12px;
@@ -814,7 +846,9 @@
     <p class="hero-sub" id="i18n-hero-sub">396Hzの音と、上質な白檀の香り。<br>深い呼吸とともに思考を手放し、「無と空」へ還る60分。</p>
     <div class="hero-meta">
       <span>瞑想ヘッドスパ MUKU</span>
-      <span>|</span>
+      <span class="sep">|</span>
+      <span id="i18n-hero-meta-women">女性専用</span>
+      <span class="sep">|</span>
       <span id="i18n-hero-meta-loc">京都・完全プライベートサロン</span>
     </div>
   </div>
@@ -895,9 +929,14 @@
       <div class="menu-name serif"><span id="i18n-menu-name-jp">無空 -MUKU- コース</span><span class="en">MUKU COURSE</span></div>
       <div class="menu-time">60 MINUTES</div>
       <div class="menu-price">
-        <span class="num serif">¥8,800</span>
+        <span class="num serif strike">¥8,800</span>
         <span class="unit" id="i18n-menu-unit">/ 60分（税込）</span>
       </div>
+      <div class="menu-price-special">
+        <span class="num serif">¥6,600</span>
+        <span class="unit" id="i18n-menu-unit-special">/ 60分（税込）</span>
+      </div>
+      <p class="menu-special-note" id="i18n-menu-special-note">Instagram・Threadsフォロワー様限定価格<br>ご来店時にフォロー画面をご提示ください</p>
       <p class="menu-desc" id="i18n-menu-desc">396Hzの音の波と、上質な白檀の香りに包まれながら、深い呼吸に合わせて頭皮や首まわりの緊張をゆっくりと解きほぐしていく60分。蓄積した脳疲労をリセットし、「無と空」の感覚を全身で味わう、MUKUの看板コースです。</p>
     </div>
   </div>
@@ -976,6 +1015,7 @@
 
     <div class="cta-notes">
       <span id="i18n-note1">✓ 完全プライベート空間だから、周りを気にせず没入できます</span>
+      <span id="i18n-note3">✓ 女性専用サロンです</span>
       <span id="i18n-note2">✓ お急ぎの方はお電話でも承っております</span>
     </div>
     <div class="cta-contact">
@@ -1014,6 +1054,7 @@
       'i18n-hero-h1': 'A space to empty your mind.',
       'i18n-hero-sub': 'The sound of 396Hz, and fine sandalwood incense.<br>Let go of your thoughts through deep breathing, and return to nothingness — a 60‑minute journey.',
       'i18n-hero-meta-loc': 'Kyoto — Private Home Salon',
+      'i18n-hero-meta-women': 'Women Only',
       'i18n-nayami-eyebrow': 'Concern',
       'i18n-nayami-h2': "That heaviness in your head<br>that just won't lift.",
       'i18n-nayami-p1': "A heaviness in your head that sleep doesn't fix. That constant hum in your mind, all day long. Information, schedules, relationships — thoughts you can't process just keep piling up in the back of your head.",
@@ -1034,6 +1075,8 @@
       'i18n-menu-h2': 'We offer<br>just one course.',
       'i18n-menu-name-jp': 'MUKU Course',
       'i18n-menu-unit': '/ 60 min (tax included)',
+      'i18n-menu-unit-special': '/ 60 min (tax included)',
+      'i18n-menu-special-note': 'Special price for Instagram &amp; Threads followers<br>Please show your following screen at check-in',
       'i18n-menu-desc': "Sixty minutes wrapped in the waves of 396Hz sound and fine sandalwood incense, as we gently release tension in your scalp and neck in time with your deep breathing. Reset accumulated mental fatigue and experience the sensation of nothingness and stillness — MUKU's signature course.",
       'i18n-message-h2': "Hello,<br>I'm MUKU.",
       'i18n-message-p1': "'I can't seem to rest my mind.' 'I just can't shake this tiredness.' I've heard voices like these countless times, both as a nurse and through running a sleep-improvement salon.",
@@ -1056,6 +1099,7 @@
       'i18n-success-title': 'Thank you for your request',
       'i18n-success-p': 'Your reservation request has been received.<br>We will contact you by email or phone within 1–2 business days.',
       'i18n-note1': '✓ A fully private space, so you can relax without worrying about others',
+      'i18n-note3': '✓ Women-only salon',
       'i18n-note2': '✓ In a hurry? Feel free to call us directly',
       'i18n-cta-contact-loc': 'Kyoto — Private Home Salon',
       'i18n-access-eyebrow': 'Access',
