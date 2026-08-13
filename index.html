@@ -613,134 +613,70 @@
     background:#ddb87c;
   }
 
-  /* ---- Booking form ---- */
-  .booking-form{
+  /* ---- DM Reservation CTA ---- */
+  .dm-cta{
     max-width:520px;
     margin:0 auto;
-    text-align:left;
-    border:1px solid var(--line-dark);
-    background:var(--charcoal-2);
-    padding:52px 44px;
-    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
   }
-  .booking-form::before, .booking-form::after{
-    content:'';
-    position:absolute;
-    width:22px; height:22px;
-    border:1px solid var(--brass-light);
-    opacity:0.7;
+  .dm-btn{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:22px 28px;
+    text-decoration:none;
+    border-radius:2px;
+    transition:transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   }
-  .booking-form::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
-  .booking-form::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
-
-  .form-row{ margin-bottom:26px; }
-  .form-row.split{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-  }
-  .form-label{
-    display:block;
-    font-size:12px;
-    letter-spacing:0.12em;
-    color:var(--ivory-dim);
-    margin-bottom:10px;
-    font-weight:400;
-  }
-  .form-label .req{
-    color:var(--brass-light);
-    margin-left:6px;
-    font-size:10px;
-    letter-spacing:0.05em;
-  }
-  .form-input, .form-textarea, .form-select{
-    width:100%;
-    background:transparent;
-    border:none;
-    border-bottom:1px solid var(--line-dark);
-    color:var(--ivory);
-    font-family:'Zen Kaku Gothic New', sans-serif;
-    font-size:14.5px;
-    padding:10px 2px;
-    outline:none;
-    transition:border-color 0.3s ease;
-  }
-  .form-select{
-    appearance:none;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23c9a46a' stroke-width='1.5'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;
-    background-position:right 2px center;
-    background-size:16px;
-    padding-right:26px;
-    cursor:pointer;
-  }
-  .form-select option{
-    background:var(--charcoal-2);
-    color:var(--ivory);
-  }
-  .form-input::placeholder, .form-textarea::placeholder{
-    color:var(--muted);
-    font-weight:300;
-  }
-  .form-input:focus, .form-textarea:focus, .form-select:focus{
-    border-bottom-color:var(--brass-light);
-  }
-  .form-textarea{
-    resize:vertical;
-    min-height:84px;
-    line-height:1.8;
-    border:1px solid var(--line-dark);
-    padding:12px 14px;
-  }
-  .form-textarea:focus{ border-color:var(--brass-light); }
-  .form-submit{
-    width:100%;
-    margin-top:12px;
-    padding:18px 0;
+  .dm-btn-primary{
     background:var(--brass-light);
     color:var(--charcoal);
-    border:none;
-    font-family:'Shippori Mincho', serif;
-    font-size:15.5px;
-    font-weight:700;
-    letter-spacing:0.1em;
-    cursor:pointer;
-    transition:background 0.3s ease, transform 0.3s ease;
   }
-  .form-submit:hover{
+  .dm-btn-primary:hover{
     background:#ddb87c;
-    transform:translateY(-1px);
+    transform:translateY(-2px);
   }
-  .form-note{
-    margin-top:16px;
+  .dm-btn-secondary{
+    background:transparent;
+    border:1px solid var(--brass-light);
+    color:var(--ivory);
+  }
+  .dm-btn-secondary:hover{
+    background:rgba(201,164,106,0.1);
+    transform:translateY(-2px);
+  }
+  .dm-icon{
+    width:30px;
+    height:30px;
+    flex-shrink:0;
+  }
+  .dm-btn span{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+  }
+  .dm-btn-label{
+    font-family:'Shippori Mincho', serif;
+    font-size:16.5px;
+    font-weight:700;
+    letter-spacing:0.06em;
+  }
+  .dm-btn-handle{
     font-size:11.5px;
-    color:var(--muted);
-    text-align:center;
-    letter-spacing:0.02em;
+    letter-spacing:0.04em;
+    opacity:0.75;
+    margin-top:3px;
   }
-  .form-success{
-    display:none;
+  .dm-note{
     max-width:520px;
-    margin:0 auto;
-    padding:52px 44px;
+    margin:20px auto 0;
     text-align:center;
-    border:1px solid var(--line-dark);
-    background:var(--charcoal-2);
-  }
-  .form-success.show{ display:block; }
-  .form-success .serif{
-    font-size:20px;
-    color:var(--brass-light);
-    margin-bottom:16px;
-    display:block;
-  }
-  .form-success p{
-    font-size:13.5px;
-    color:var(--ivory-dim);
-    font-weight:300;
-    line-height:1.9;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.02em;
   }
   .cta-notes{
     margin-top:38px;
@@ -817,7 +753,8 @@
     .kodawari-num .kanji{ font-size:32px; }
     section{ padding:80px 0; }
     .menu-card{ padding:48px 26px; }
-    .booking-form{ padding:40px 24px; }
+    .dm-btn{ padding:18px 20px; }
+    .dm-btn-label{ font-size:15px; }
     .menu-grid{ grid-template-columns:1fr; gap:24px; }
     .form-row.split{ grid-template-columns:1fr; gap:22px; }
   }
@@ -1022,60 +959,25 @@
   <div class="wrap">
     <span class="eyebrow">reservation</span>
     <h2 class="serif" id="i18n-cta-h2">「無」になる60分を、<br>予約する。</h2>
-    <p class="cta-sub" id="i18n-cta-sub">一日にお迎えできるのは3名様まで。あなただけの静寂な時間を、大切にお届けしたいから。<br>下記フォームより、ご予約・お問い合わせをお送りください。</p>
+    <p class="cta-sub" id="i18n-cta-sub">一日にお迎えできるのは3名様まで。あなただけの静寂な時間を、大切にお届けしたいから。<br>ご予約・お問い合わせは、InstagramまたはThreadsのDMにて承ります。</p>
 
-    <form id="booking-form" class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="hidden" name="_subject" value="【MUKU】新規予約フォーム">
-
-      <div class="form-row">
-        <label class="form-label" for="f-name" id="i18n-label-name">お名前<span class="req" id="i18n-req-name">必須</span></label>
-        <input class="form-input" type="text" id="f-name" name="お名前" placeholder="山田 花子" required>
-      </div>
-
-      <div class="form-row">
-        <label class="form-label" for="f-course" id="i18n-label-course">ご希望のコース<span class="req" id="i18n-req-course">必須</span></label>
-        <select class="form-select" id="f-course" name="ご希望のコース" required>
-          <option value="" disabled selected id="i18n-course-placeholder">コースをお選びください</option>
-          <option value="無空 -MUKU- コース（60分）" id="i18n-course-60">無空 -MUKU- コース（60分）¥6,600（SNS限定・税込）</option>
-          <option value="無空 -MUKU- ロングコース（90分）" id="i18n-course-90">無空 -MUKU- ロングコース（90分）¥9,900（SNS限定・税込）</option>
-        </select>
-      </div>
-
-      <div class="form-row split">
-        <div>
-          <label class="form-label" for="f-tel" id="i18n-label-tel">電話番号<span class="req" id="i18n-req-tel">必須</span></label>
-          <input class="form-input" type="tel" id="f-tel" name="電話番号" placeholder="090-1234-5678" required>
-        </div>
-        <div>
-          <label class="form-label" for="f-email" id="i18n-label-email">メールアドレス<span class="req" id="i18n-req-email">必須</span></label>
-          <input class="form-input" type="email" id="f-email" name="メールアドレス" placeholder="example@mail.com" required>
-        </div>
-      </div>
-
-      <div class="form-row split">
-        <div>
-          <label class="form-label" for="f-date1" id="i18n-label-date1">ご希望日時（第一希望）</label>
-          <input class="form-input" type="text" id="f-date1" name="第一希望日時" placeholder="例）8/10（月）14:00〜">
-        </div>
-        <div>
-          <label class="form-label" for="f-date2" id="i18n-label-date2">ご希望日時（第二希望）</label>
-          <input class="form-input" type="text" id="f-date2" name="第二希望日時" placeholder="例）8/12（水）16:00〜">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label class="form-label" for="f-message" id="i18n-label-message">ご相談・ご要望</label>
-        <textarea class="form-textarea" id="f-message" name="ご相談・ご要望" placeholder="ご不明点やご要望があればご記入ください（任意）"></textarea>
-      </div>
-
-      <button type="submit" class="form-submit" id="i18n-submit">予約を送信する</button>
-      <p class="form-note" id="i18n-form-note">送信後、1〜2営業日以内に折り返しご連絡いたします</p>
-    </form>
-
-    <div class="form-success" id="form-success">
-      <span class="serif" id="i18n-success-title">送信ありがとうございます</span>
-      <p id="i18n-success-p">ご予約リクエストを受け付けました。<br>1〜2営業日以内に、記載のメールまたはお電話にてご連絡いたします。</p>
+    <div class="dm-cta">
+      <a href="https://www.instagram.com/muku.kyoto?igsh=ODAyb2twcnhuaXN0" target="_blank" rel="noopener" class="dm-btn dm-btn-primary">
+        <svg class="dm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span>
+          <span class="dm-btn-label" id="i18n-dm-instagram">Instagramで予約する</span>
+          <span class="dm-btn-handle">@muku.kyoto</span>
+        </span>
+      </a>
+      <a href="https://www.threads.com/@muku.kyoto" target="_blank" rel="noopener" class="dm-btn dm-btn-secondary">
+        <svg class="dm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c-4.5 0-7.5 2.7-7.5 7 0 3 1.6 5.2 4.1 6.3-.1-1.6.2-2.9 1-3.9.8-1 1.9-1.5 3.3-1.6 1.2-.1 2.1.2 2.7.8.5.6.7 1.3.6 2.1-.1.9-.6 1.6-1.4 2-.7.4-1.6.4-2.3 0-.5-.3-.8-.7-.9-1.3"/><path d="M12 21c4.5 0 7.5-3 7.5-7.5 0-3.8-1.7-6.6-4.7-7.9"/></svg>
+        <span>
+          <span class="dm-btn-label" id="i18n-dm-threads">Threadsで予約する</span>
+          <span class="dm-btn-handle">@muku.kyoto</span>
+        </span>
+      </a>
     </div>
+    <p class="dm-note" id="i18n-dm-note">DMにて、ご希望のコース・お日にちをお知らせください</p>
 
     <div class="cta-notes">
       <span id="i18n-note1">✓ 完全プライベート空間だから、周りを気にせず没入できます</span>
@@ -1153,25 +1055,10 @@
       'i18n-message-p3': "MUKU is a small home salon in Kyoto. There's nothing extravagant about it, but I put care into every detail — the sound, the scent, the space, and the technique — so that you can truly let go.",
       'i18n-message-p4': "If you're still deciding, start with just 60 minutes. I'd love for you to experience the feeling of nothingness and stillness for yourself.",
       'i18n-cta-h2': 'Book your<br>60 minutes of nothingness.',
-      'i18n-cta-sub': 'We welcome up to 3 guests per day, so we can give your quiet time the care it deserves.<br>Please send your reservation or inquiry using the form below.',
-      'i18n-label-name': 'Name',
-      'i18n-label-course': 'Preferred Course',
-      'i18n-req-course': 'Required',
-      'i18n-course-placeholder': 'Please select a course',
-      'i18n-course-60': 'MUKU Course (60 min) ¥6,600 (SNS follower price, tax included)',
-      'i18n-course-90': 'MUKU Long Course (90 min) ¥9,900 (SNS follower price, tax included)',
-      'i18n-req-name': 'Required',
-      'i18n-label-tel': 'Phone Number',
-      'i18n-req-tel': 'Required',
-      'i18n-label-email': 'Email Address',
-      'i18n-req-email': 'Required',
-      'i18n-label-date1': 'Preferred Date/Time (1st choice)',
-      'i18n-label-date2': 'Preferred Date/Time (2nd choice)',
-      'i18n-label-message': 'Message / Requests',
-      'i18n-submit': 'Send Reservation Request',
-      'i18n-form-note': 'We will get back to you within 1–2 business days after you submit.',
-      'i18n-success-title': 'Thank you for your request',
-      'i18n-success-p': 'Your reservation request has been received.<br>We will contact you by email or phone within 1–2 business days.',
+      'i18n-cta-sub': 'We welcome up to 3 guests per day, so we can give your quiet time the care it deserves.<br>Please reach out via Instagram or Threads DM to book.',
+      'i18n-dm-instagram': 'Book via Instagram',
+      'i18n-dm-threads': 'Book via Threads',
+      'i18n-dm-note': 'Please send us a DM with your preferred course and date.',
       'i18n-note1': '✓ A fully private space, so you can relax without worrying about others',
       'i18n-note3': '✓ Women-only salon',
       'i18n-note2': '✓ In a hurry? Feel free to call us directly',
@@ -1188,19 +1075,7 @@
     }
   };
 
-  var placeholderTranslations = {
-    en: {
-      'f-name': 'Jane Smith',
-      'f-tel': '090-1234-5678',
-      'f-email': 'example@mail.com',
-      'f-date1': 'e.g. Aug 10 (Mon) 2:00 PM~',
-      'f-date2': 'e.g. Aug 12 (Wed) 4:00 PM~',
-      'f-message': 'Any questions or requests? (optional)'
-    }
-  };
-
   var jpCache = {};
-  var jpPlaceholderCache = {};
 
   function applyLang(lang) {
     currentLang = lang;
@@ -1213,51 +1088,12 @@
       el.innerHTML = (lang === 'en') ? translations.en[id] : jpCache[id];
     });
 
-    Object.keys(placeholderTranslations.en).forEach(function(id){
-      var el = document.getElementById(id);
-      if (!el) return;
-      if (!(id in jpPlaceholderCache)) jpPlaceholderCache[id] = el.getAttribute('placeholder');
-      el.setAttribute('placeholder', (lang === 'en') ? placeholderTranslations.en[id] : jpPlaceholderCache[id]);
-    });
-
     document.getElementById('lang-btn-jp').classList.toggle('active', lang === 'jp');
     document.getElementById('lang-btn-en').classList.toggle('active', lang === 'en');
   }
 
   document.getElementById('lang-btn-jp').addEventListener('click', function(){ applyLang('jp'); });
   document.getElementById('lang-btn-en').addEventListener('click', function(){ applyLang('en'); });
-
-  /* ================= Booking form ================= */
-  const bookingForm = document.getElementById('booking-form');
-  const formSuccess = document.getElementById('form-success');
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', async function(e){
-      e.preventDefault();
-      const submitBtn = bookingForm.querySelector('.form-submit');
-      const isEn = currentLang === 'en';
-      submitBtn.disabled = true;
-      submitBtn.textContent = isEn ? 'Sending...' : '送信中...';
-      try {
-        const res = await fetch(bookingForm.action, {
-          method: 'POST',
-          body: new FormData(bookingForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          bookingForm.style.display = 'none';
-          formSuccess.classList.add('show');
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.textContent = isEn ? 'Send Reservation Request' : '予約を送信する';
-          alert(isEn ? 'Something went wrong. Please contact us by phone or email.' : '送信に失敗しました。お手数ですが、お電話またはメールにてご連絡ください。');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = isEn ? 'Send Reservation Request' : '予約を送信する';
-        alert(isEn ? 'Something went wrong. Please contact us by phone or email.' : '送信に失敗しました。お手数ですが、お電話またはメールにてご連絡ください。');
-      }
-    });
-  }
 </script>
 
 </body>
